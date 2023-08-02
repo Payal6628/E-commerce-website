@@ -38,11 +38,11 @@ const Navbar = () => {
           </div>
         </div>
         <div className="center">
-          <Link className="link" to="/"> SamStore</Link>
+          <Link className="link" to="/"> Store</Link>
         </div>
         <div className="right">
           <div className="item">
-            <Link className="link" to="/"> SamStore</Link>
+            <Link className="link" to="/"> Store</Link>
           </div>
           <div className="item">
             <Link className="link" to="/"> HomePage</Link>
