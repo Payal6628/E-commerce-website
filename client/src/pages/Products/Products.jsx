@@ -1,13 +1,13 @@
 import React from "react";
-import { useState } from "react";
-import { useParams } from "react-router-dom";
-import List from "../../components/List/List";
-import useFetch from "../../hooks/useFetch";
 import "./Products.scss";
+import List from "../../components/List/List";
+import { useParams } from "react-router-dom";
+import { useState } from "react";
+import useFetch from "../../hooks/useFetch";
 
 const Products = () => {
   const catId = parseInt(useParams().id);
-  const [maxPrice, setMaxPrice] = useState(100);
+  const [maxPrice, setMaxPrice] = useState(1000);
   const [sort, setSort] = useState(null);
   const [selectedSubCats, setSelectedSubCats] = useState([]);
 
@@ -25,7 +25,6 @@ const Products = () => {
         : selectedSubCats.filter((item) => item !== value)
     );
   };
-
   return (
     <div className="products">
       <div className="left">
@@ -66,7 +65,7 @@ const Products = () => {
               name="price"
               onChange={(e) => setSort("asc")}
             />
-            <label htmlFor="asc">Price (Lowest first)</label>
+            <label htmlFor="asc">Price (Lowest first) </label>
           </div>
           <div className="inputItem">
             <input
@@ -76,7 +75,7 @@ const Products = () => {
               name="price"
               onChange={(e) => setSort("desc")}
             />
-            <label htmlFor="desc">Price (Highest first)</label>
+            <label htmlFor="desc">Price (Highest first) </label>
           </div>
         </div>
       </div>
@@ -96,5 +95,4 @@ const Products = () => {
     </div>
   );
 };
-
 export default Products;

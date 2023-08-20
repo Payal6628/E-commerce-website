@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react'
-import Card from '../Card/Card';
+import React from "react";
 import "./FeaturedProducts.scss";
-import useFetch from '../../hooks/useFetch';
+import Card from "../Card/Card";
+import useFetch from "../../hooks/useFetch";
 
 const FeaturedProducts = ({ type }) => {
   const { data, loading, error } = useFetch(
@@ -31,4 +31,4 @@ const FeaturedProducts = ({ type }) => {
   );
 };
 
-export default FeaturedProducts
+export default FeaturedProducts;

@@ -18,23 +18,26 @@ const Cart = () => {
     });
     return total.toFixed(2);
   };
-const stripePromise = loadStripe(
-  "pk_test_51NaF4WSG0c4yxMUGaT9GvDIqg8mlu9vaJI0sHi2PtmD0oIpM9hEplahWoYgS6caoIfpPiwFGpAoyZpSBtmlFXUO000dSNHS6DS"
-);
-  const handlePayment = async()=>{
+  const stripePromise = loadStripe(
+    "pk_test_51NhBIHSGd1EKZHIDegeDe5BX4QnScUdEV11V06bdTWIz6Ys2ZXxkoBziQZLsebcI0xAAoyxVUFoz7ZawfCpRo6K80092enfiFL"
+  );
+  // const stripePromise = loadStripe(
+  //   "pk_test_51NaF4WSG0c4yxMUGaT9GvDIqg8mlu9vaJI0sHi2PtmD0oIpM9hEplahWoYgS6caoIfpPiwFGpAoyZpSBtmlFXUO000dSNHS6DS"
+  // );
+  const handlePayment = async () => {
     try {
       const strip = await stripePromise;
 
-      const res = await makeRequest.post("/orders",{
+      const res = await makeRequest.post("/orders", {
         products,
       });
-      await strip.redirectToCheckout ({
-        sessionId:res.data.stripeSession.id,
-      })
+      await strip.redirectToCheckout({
+        sessionId: res.data.stripeSession.id,
+      });
     } catch (err) {
-      console.log(err)
+      console.log(err);
     }
-  } 
+  };
   return (
     <div className="cart">
       <h1>Products in your cart</h1>

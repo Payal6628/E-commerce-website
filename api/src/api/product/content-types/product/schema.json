@@ -41,7 +41,7 @@
       ]
     },
     "price": {
-      "type": "integer"
+      "type": "decimal"
     },
     "isNew": {
       "type": "boolean",

@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-bottom: 50px;
 
   .image{
     width: 100%;
@@ -33,12 +34,13 @@
       left: 5px;
       background-color: white;
       color: teal;
-      padding: 3px  5px;
+      padding: 3px 5px;
       z-index: 3;
       font-weight: 500;
       font-size: 12px;
     }
   }
+
   h2{
     font-size: 16px;
     font-weight: 400;
@@ -51,8 +53,7 @@
     h3{
       font-size: 18px;
       font-weight: 500;
-      
-      
+
       &:first-child{
         color: gray;
         text-decoration: line-through;
